@@ -5,10 +5,15 @@
  */
 package vista;
 
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import modelo.Hash;
 import modelo.SqlUsuarios;
 import modelo.Usuarios;
@@ -17,13 +22,15 @@ import modelo.Usuarios;
  *
  * @author silve
  */
-public class login extends javax.swing.JFrame {
 
+public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
     public login() {
+        
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/img/icono.png")).getImage());
     }
 
     /**
@@ -35,137 +42,138 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnLogin = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        txtUserLogin = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtUserLogin = new javax.swing.JTextField();
-        btnSalirLogin = new javax.swing.JButton();
         txtPassLogin = new javax.swing.JPasswordField();
+        btnLogin = new javax.swing.JButton();
+        btnSalirLogin = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 255, 102));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
 
-        btnLogin.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btnLogin.setText("Iniciar Sesion");
+        jPanel1.setBackground(new java.awt.Color(118, 183, 204));
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtUserLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(txtUserLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 177, 33));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel1.setText("Usuario:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 70, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setText("Contraseña:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+
+        txtPassLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(txtPassLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 177, 33));
+
+        btnLogin.setBackground(new java.awt.Color(153, 153, 255));
+        btnLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLogin.setText("INICIAR SESIÓN");
+        btnLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 160, 37));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel1.setText("Usuario");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel2.setText("Contraseña");
-
-        btnSalirLogin.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btnSalirLogin.setText("Salir");
+        btnSalirLogin.setBackground(new java.awt.Color(153, 153, 255));
+        btnSalirLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSalirLogin.setText("SALIR");
+        btnSalirLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSalirLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirLoginActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSalirLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 140, 37));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("INGRESA TUS DATOS");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 200, 37));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/mundoa3.jpg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 330));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUserLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                            .addComponent(txtPassLogin))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalirLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(194, 194, 194))))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPassLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalirLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirLoginActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Saliendo...");
-        
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirLoginActionPerformed
-
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
-        SqlUsuarios modSQL = new SqlUsuarios();
-        Usuarios mod = new Usuarios();
-        
-        Date date = new Date();
-        DateFormat fechaHora = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
-        String pass = new String(txtPassLogin.getPassword());
-        
-        if (!txtUserLogin.getText().equals("") && !pass.equals("")) {
-            String nuevoPass = Hash.sha1(pass);
-            
-            mod.setUsuario(txtUserLogin.getText());
-            mod.setPass(nuevoPass);
-            mod.setLast_log(fechaHora.format(date));
-            
-            if (modSQL.login(mod)) {
-                
-                inicio.frmLogin = null;
-                this.dispose();
-                
-                home frmHome = new home();
-                frmHome.setVisible(true);
-                
-            } else {
-                
-                JOptionPane.showMessageDialog(null, "Datos Incorrectos!");
-                
-            }
-            
-        } else {
-            
-            JOptionPane.showMessageDialog(null, "Debe ingresar los datos!");
-        }
-        
-
-    }//GEN-LAST:event_btnLoginActionPerformed
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         
         inicio.frmLogin = null;
         
+        
 
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnSalirLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirLoginActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Saliendo...");
+
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirLoginActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+
+        SqlUsuarios modSQL = new SqlUsuarios();
+        Usuarios mod = new Usuarios();
+
+        Date date = new Date();
+        DateFormat fechaHora = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String pass = new String(txtPassLogin.getPassword());
+
+        if (!txtUserLogin.getText().equals("") && !pass.equals("")) {
+            String nuevoPass = Hash.sha1(pass);
+
+            mod.setUsuario(txtUserLogin.getText());
+            mod.setPass(nuevoPass);
+            mod.setLast_log(fechaHora.format(date));
+
+            if (modSQL.login(mod)) {
+
+                inicio.frmLogin = null;
+                this.dispose();
+
+                menu frmMenu = new menu();
+                frmMenu.setVisible(true);
+
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Datos Incorrectos!");
+
+            }
+
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Debe ingresar los datos!");
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,7 +215,12 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JButton btnSalirLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPassLogin;
     private javax.swing.JTextField txtUserLogin;
     // End of variables declaration//GEN-END:variables
-}
+    
+    
+    }
